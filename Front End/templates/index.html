@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<section class="intro">
+    <h2>Welcome to the Lumbar Spine Classification Tool</h2>
+    <p>Our tool allows you to upload MRI images and classify lumbar spine degenerative conditions with the power of AI.</p>
+</section>
+
+<section class="upload">
+    <h3>Upload MRI Image</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".dcm,.nii,.nmc,image/*" required>
+        <button type="submit">See Results</button>
+    </form>
+</section>
+
+<section class="result">
+    {% if result %}
+        <h3>Classification Result:</h3>
+        <p>{{ result }}</p>
+    {% else %}
+        <h3>Awaiting Image Upload...</h3>
+    {% endif %}
+</section>
+{% endblock %}

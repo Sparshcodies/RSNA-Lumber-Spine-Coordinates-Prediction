@@ -1,0 +1,22 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degenerative Lumbar Spine Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Degenerative Lumbar Spine Classification</h1>
+        <p>Using Deep Learning to Detect and Classify Lumbar Spine Conditions</p>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Lumbar Spine Classification Project | Built with Flask</p>
+    </footer>
+</body>
+</html>
